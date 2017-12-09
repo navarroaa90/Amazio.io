@@ -15,7 +15,7 @@ const Catalog = (props) => {
             <td>{product.name}</td>
             <td>{product.price}</td>
             <td>{product.sku}</td>
-            <td>{product.description}</td>
+            <td>{product.description}<button onClick={props.addItem}>+</button></td>
         </tr>)}
      </tbody>
 </table>

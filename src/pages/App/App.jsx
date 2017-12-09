@@ -18,6 +18,17 @@ class App extends Component {
   }
 
   /*----- lifecycle methods-----*/
+  // addItem(props)  {
+  //   console.log()
+  //  fetch('/products', { 
+  //    method: "POST",
+  //    header: { 'Content-Type': 'application/json'},
+  //    body: JSON.stringify({ product: this })
+  //  })
+  // }
+
+
+  /*----- lifecycle methods-----*/
   componentDidMount(){
     fetch('/products').then(res => res.json())
     .then(products => {
@@ -30,7 +41,7 @@ class App extends Component {
       <div>
         <NavBar />
         <Switch>
-          <Route exact path="/" render={() => <Catalog products={this.state.products} /> }/>
+          <Route exact path="/" render={() => <Catalog products={this.state.products} addItem={this.addItem} /> }/>
           <Route path='/checkout' render={() => <Checkout />}/>
           <Route path='/confirmation' render={() => <Confirmation />} />
         </Switch>
