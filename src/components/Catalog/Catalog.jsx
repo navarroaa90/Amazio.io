@@ -1,10 +1,25 @@
 import React from 'react'
+import './Catalog.css'
 
-const Catalog = () => {
+const Catalog = (props) => {
     return (
-        <div>
-            Catalog
-        </div>
+ <table> 
+     <tbody>
+         <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Sku</th>
+            <th>Description</th>
+        </tr>
+            {props.products.map((product, idx) => <tr key={idx}>
+            <td>{product.name}</td>
+            <td>{product.price}</td>
+            <td>{product.sku}</td>
+            <td>{product.description}</td>
+        </tr>)}
+     </tbody>
+</table>
+        
     )
 }
 
